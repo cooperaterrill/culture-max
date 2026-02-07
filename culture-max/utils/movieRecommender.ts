@@ -19,7 +19,7 @@ async function getRecommendedMovieIds(
   }
   //sort based on count frequency, then take id
   const sorted = Array.from(recommendationIds)
-    .sort((rec1, rec2) => rec1[1] - rec2[1])
+    .sort((rec1, rec2) => rec2[1] - rec1[1])
     .map((pair) => pair[0]);
   return sorted.slice(0, numRecommendations);
 }
