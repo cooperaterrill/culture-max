@@ -8,7 +8,7 @@ import { TMDBMoviesRecommendation } from "./types";
  * @param language for example, en-us (default)
  * @returns
  */
-async function getMovieRecommendationsById(
+export async function getMovieRecommendations(
   movie_id: number,
   language = "en-US",
 ) {
@@ -23,11 +23,11 @@ async function getMovieRecommendationsById(
   const res = (await fetch(
     `https://api.themoviedb.org/3/movie/${movie_id}/recommendations?language=${language}&page=1`,
     options,
-  ).then((res) => res.json())) as TMDBMoviesRecommendation[];
+  ).then((res) => res.json())) as TMDBMoviesRecommendation;
   return res;
 }
 
-async function getSimilarMoviesById(movie_id: number, language = "en-US") {
+export async function getSimilarMovies(movie_id: number, language = "en-US") {
   const options = {
     method: "GET",
     headers: {
@@ -43,4 +43,4 @@ async function getSimilarMoviesById(movie_id: number, language = "en-US") {
   return res;
 }
 
-getMovieRecommendationsById(550).then((d) => console.log(d));
+getMovieRecommendations(550).then((d) => console.log(d));
