@@ -22,3 +22,19 @@ export interface TMDBMoviesRecommendation {
   total_pages: number;
   total_results: number;
 }
+
+export interface LastFMSimilarArtist {
+  name: string;
+  mbid?: string;
+  match: string;
+  url: string;
+  image: ImageDataArray; //TODO: this is probably not correct type
+  streamable: string;
+}
+
+export interface LastFMSimliarArtists {
+  similarartists: {
+    artist: LastFMSimilarArtist[];
+    "@attr": { artist: string };
+  };
+}

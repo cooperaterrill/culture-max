@@ -1,3 +1,7 @@
+import * as dotenv from "dotenv";
+dotenv.config();
+
+console.log(process.env.TMDB_KEY);
 import { TMDBMoviesRecommendation } from "./types";
 
 /**
