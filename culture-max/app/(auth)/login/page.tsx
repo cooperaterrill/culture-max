@@ -55,9 +55,9 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50">
-      <div className="w-full max-w-sm space-y-6 rounded-lg border border-zinc-200 bg-white p-8 shadow-sm">
-        <h1 className="text-center text-2xl font-bold text-zinc-900">
+    <div className="flex min-h-screen items-center justify-center bg-gray-50">
+      <div className="w-full max-w-sm space-y-6 rounded-lg border border-gray-200 border-t-4 border-t-[#D0B787] bg-white p-8 shadow-md">
+        <h1 className="text-center text-2xl font-bold text-[#003595]">
           {isSignUp ? "Create Account" : "Sign In"}
         </h1>
 
@@ -65,7 +65,7 @@ export default function LoginPage() {
           <div>
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-zinc-700"
+              className="block text-sm font-medium text-gray-700"
             >
               Email
             </label>
@@ -75,7 +75,7 @@ export default function LoginPage() {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="mt-1 w-full rounded-md border border-zinc-300 px-3 py-2 text-sm text-zinc-900 placeholder-zinc-400 focus:border-zinc-500 focus:outline-none focus:ring-1 focus:ring-zinc-500"
+              className="form-input mt-1"
               placeholder="you@example.com"
             />
           </div>
@@ -83,7 +83,7 @@ export default function LoginPage() {
           <div>
             <label
               htmlFor="password"
-              className="block text-sm font-medium text-zinc-700"
+              className="block text-sm font-medium text-gray-700"
             >
               Password
             </label>
@@ -94,7 +94,7 @@ export default function LoginPage() {
               minLength={6}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="mt-1 w-full rounded-md border border-zinc-300 px-3 py-2 text-sm text-zinc-900 placeholder-zinc-400 focus:border-zinc-500 focus:outline-none focus:ring-1 focus:ring-zinc-500"
+              className="form-input mt-1"
               placeholder="••••••••"
             />
           </div>
@@ -110,7 +110,7 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full rounded-md bg-zinc-900 px-4 py-2 text-sm font-medium text-white hover:bg-zinc-800 disabled:opacity-50"
+            className="form-button"
           >
             {loading
               ? "Loading..."
@@ -120,7 +120,7 @@ export default function LoginPage() {
           </button>
         </form>
 
-        <p className="text-center text-sm text-zinc-600">
+        <p className="text-center text-sm text-gray-600">
           {isSignUp ? "Already have an account?" : "Don't have an account?"}{" "}
           <button
             type="button"
@@ -129,7 +129,7 @@ export default function LoginPage() {
               setError(null);
               setMessage(null);
             }}
-            className="font-medium text-zinc-900 underline hover:no-underline"
+            className="font-medium text-[#003595] hover:underline transition-colors duration-200"
           >
             {isSignUp ? "Sign In" : "Sign Up"}
           </button>

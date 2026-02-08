@@ -3,6 +3,10 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --blue: #003595;
+  --gold: #D0B787;
+  --blue-light: #1a4fba;
+  --gold-light: #e0cda5;
 }
 
 @theme inline {
@@ -12,7 +16,27 @@
   --font-mono: var(--font-geist-mono);
 }
 
+.form-input {
+  @apply w-full px-3 py-2 border-2 border-gray-300 rounded-md text-sm transition-colors duration-200 outline-none;
+}
 
+.form-input:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 2px rgba(0, 53, 149, 0.15);
+}
+
+.form-button {
+  @apply w-full text-white p-2 rounded-md font-medium cursor-pointer transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  background-color: var(--blue);
+}
+
+.form-button:hover:not(:disabled) {
+  background-color: var(--blue-light);
+}
+
+.form-container {
+  @apply space-y-4;
+}
 
 body {
   background: var(--background);
